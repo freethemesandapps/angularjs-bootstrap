@@ -13,7 +13,7 @@
     <title>Angularjs + Bootstrap</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="description" content="ACME Inc.">
+    <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Vendor: Bootstrap Stylesheets http://getbootstrap.com -->
@@ -26,6 +26,7 @@
 
 </head>
 <body ng-app="tutorialWebApp">
+
 <!--[if lt IE 7]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
     your browser</a> to improve your experience.</p>
@@ -33,6 +34,7 @@
 
 <!-- Our Website Content Goes Here -->
 <div ng-include='"templates/header.html"'></div>
+<div ng-include='"partials/carousel.html"'></div>
 <div ng-view></div>
 <div ng-include='"templates/footer.html"'></div>
 
@@ -46,6 +48,20 @@
 
 <!-- Our Website Javascripts -->
 <script src="js/main.js"></script>
+
+<script type="text/javascript">
+  // Activates the Carousel
+  $('.carousel').carousel({
+    interval: 5000
+  });
+
+  // Activates Tooltips for Social Links
+  $('.tooltip-social').tooltip({
+    selector: "a[data-toggle=tooltip]"
+  })
+
+</script>
+
 
 </body>
 </html>
